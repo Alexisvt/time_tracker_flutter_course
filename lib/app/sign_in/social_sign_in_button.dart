@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class SocialSignInButton extends CustomElevateButton {
   SocialSignInButton({
     Key? key,
+    required String assetName,
     required String text,
     required Color color,
     required Color textColor,
@@ -12,8 +13,12 @@ class SocialSignInButton extends CustomElevateButton {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Image.asset(''),
-              Text('text')
+              Image.asset(assetName),
+              Text(text, style: TextStyle(color: textColor, fontSize: 15)),
+              Opacity(
+                opacity: 0.0,
+                child: Image.asset(assetName),
+              )
             ],
           ),
           onPressed: onPressed,
